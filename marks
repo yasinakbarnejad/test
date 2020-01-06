@@ -1,0 +1,11 @@
+file = open("text", "w")
+for i in range (10):
+    name = input("please enter your name:")
+    mark = int(input("please enter your mark:"))
+    if mark >= 21:
+        print("it is wrong")
+    else:
+        student =  name,'%d'%mark
+        file.writelines(str(student))
+        file.write('\n')
+file.close()
