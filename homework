@@ -1,0 +1,8 @@
+file_name = "text.txt"
+count = 0
+file =open(file_name, "r")
+lines = file.readlines()
+
+for i in lines:
+    count += 1
+print(count)
