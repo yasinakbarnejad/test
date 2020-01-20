@@ -1,0 +1,6 @@
+file_name = ('text.txt')
+file_name2 = ('text')
+file =open(file_name)
+file2 = open(file_name2, "w")
+a = file.read()
+file2.write(a)
