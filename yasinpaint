@@ -1,0 +1,68 @@
+import pygame
+
+#initialize and create window
+pygame.init()
+surface = pygame.display.set_mode((900, 900))
+pygame.display.set_caption('yasin paint')
+
+#colors
+Green = (0, 255, 0)
+blue = (0, 0, 255)
+red = (255, 0, 0)
+white = (255, 255, 255)
+grey = (128, 128, 128)
+pink = (250, 105, 180)
+yellow = (255, 255, 0)
+orange = (255, 165, 0)
+black = (0, 0, 0)
+purple = (128, 0, 128)
+choclate = (210, 105, 30)
+color = [Green, blue, red, white, grey, pink, yellow, choclate, purple, black, yellow, orange]
+
+surface.fill(red)
+i = 0
+finished = False
+
+#main loop
+while not finished:
+    for e in pygame.event.get():
+        if e.type == pygame.QUIT:
+            finished = 1
+            break
+
+        if e.type == pygame.MOUSEBUTTONDOWN:
+            print(e.pos)
+        if e.type == pygame.KEYDOWN:
+            if e.key == pygame.K_b:
+                surface.fill(blue)
+        if e.type == pygame.KEYDOWN:
+            if e.key == pygame.K_r:
+                surface.fill(red)
+        if e.type == pygame.KEYDOWN:
+            if e.key == pygame.K_g:
+                surface.fill(Green)
+        if e.type == pygame.KEYDOWN:
+            if e.key == pygame.K_t:
+                surface.fill(grey)
+        if e.type == pygame.KEYDOWN:
+            if e.key == pygame.K_p:
+                surface.fill(pink)
+        if e.type == pygame.KEYDOWN:
+            if e.key == pygame.K_w:
+                surface.fill(white)
+        if e.type == pygame.KEYDOWN:
+            if e.key == pygame.K_d:
+                surface.fill(purple)
+        if e.type == pygame.KEYDOWN:
+            if e.key == pygame.K_o:
+                surface.fill(orange)
+        if e.type == pygame.KEYDOWN:
+            if e.key == pygame.K_m:
+                surface.fill(black)
+        if e.type == pygame.KEYDOWN:
+            if e.key == pygame.K_c:
+                surface.fill(choclate)
+        if e.type == pygame.KEYDOWN:
+            if e.key == pygame.K_y:
+                surface.fill(yellow)
+    pygame.display.update()
