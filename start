@@ -1,0 +1,52 @@
+import pygame
+
+pygame.init()
+surface = pygame.display.set_mode((800, 600))
+pygame.display.set_caption('aeen')
+Green = (0, 255, 0)
+blue = (0, 0, 255)
+red = (255, 0, 0)
+white = (255, 255, 255)
+grey = (128, 128, 128)
+pink = (250, 105, 180)
+yellow = (255, 255, 0)
+orange = (255, 165, 0)
+black = (0, 0, 0)
+purple = (128, 0, 128)
+choclate = (210, 105, 30)
+color = [Green, blue, red, white, grey, pink, yellow, choclate, purple, black, yellow, orange]
+
+surface.fill(white)
+i = 0
+finished = False
+buffer = pygame.image.load('68.png')
+buffer = pygame.transform.scale(buffer, (800, 600))
+surface.blit(buffer, (0, 0))
+pygame.mixer.init()
+pygame.mixer.music.load('658.mp3')
+pygame.mixer.music.play()
+rect2 = pygame.draw.rect(surface,red, (300, 300, 200, 80), 0)
+rect1 = pygame.draw.rect(surface,Green, (300,150, 200, 80), 0)
+font = pygame.font.Font(None, 80)
+while not finished:
+    for e in pygame.event.get():
+        if e.type == pygame.QUIT:
+            finished = 1
+            break
+        if e.type == pygame.MOUSEMOTION:
+            if rect1.collidepoint(e.pos):
+                pygame.draw.rect(surface, (0, 200, 0), (300, 150, 200, 80), 0)
+            else:
+                pygame.draw.rect(surface, (0, 255, 0), (300, 150, 200, 80), 0)
+        if e.type == pygame.MOUSEMOTION:
+            if rect2.collidepoint(e.pos):
+                pygame.draw.rect(surface, (200, 0, 0), (300, 300, 200, 80), 0)
+            else:
+                pygame.draw.rect(surface, red, (300, 300, 200, 80), 0)
+    output_string = "START"
+    text = font.render(output_string, True, black)
+    surface.blit(text, [310, 175])
+    output_string = "QUIT"
+    text = font.render(output_string, True, black)
+    surface.blit(text, [310, 325])
+    pygame.display.update()
