@@ -1,0 +1,31 @@
+output_string1 = input("1")
+import pygame
+
+pygame.init()
+surface = pygame.display.set_mode((800, 600))
+pygame.display.set_caption('aeen')
+Green = (0, 255, 0)
+blue = (0, 0, 255)
+red = (255, 0, 0)
+white = (255, 255, 255)
+grey = (128, 128, 128)
+pink = (250, 105, 180)
+yellow = (255, 255, 0)
+orange = (255, 165, 0)
+black = (0, 0, 0)
+purple = (128, 0, 128)
+choclate = (210, 105, 30)
+color = [Green, blue, red, white, grey, pink, yellow, choclate, purple, black, yellow, orange]
+
+surface.fill(white)
+i = 0
+finished = False
+font = pygame.font.Font(None, 80)
+while not finished:
+    for e in pygame.event.get():
+        if e.type == pygame.QUIT:
+            finished = 1
+            break
+    text = font.render(output_string1, True, black)
+    surface.blit(text, [350, 280])
+    pygame.display.update()
